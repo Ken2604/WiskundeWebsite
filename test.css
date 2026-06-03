@@ -1,0 +1,137 @@
+/* Algemene instellingen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 4px solid #3b82f6;
+}
+
+header h1 { font-size: 2.2rem; font-weight: 800; }
+header p { font-size: 1rem; opacity: 0.8; margin-top: 5px; }
+
+/* Titels */
+.section-title {
+    margin: 40px 0 20px 0;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #475569;
+}
+
+/* Grids voor de blokken */
+.grid-methoden { display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); gap: 20px; }
+
+/* LINK BLOKKEN (Algemeen) */
+.block-link { text-decoration: none; color: inherit; display: block; }
+
+/* DE BLOKKEN */
+.klass-block, .methode-block {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.klass-block:hover, .methode-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+/* Grote nummers in de achtergrond van de blokken */
+.jaar-num {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 4rem;
+    font-weight: 900;
+    opacity: 0.08;
+}
+
+/* Blokken specifieke accenten (links-lijntje) */
+.onderbouw { border-left: 6px solid #3b82f6; }
+.havo { border-left: 6px solid #f97316; }
+.vwo { border-left: 6px solid #8b5cf6; }
+
+/* Methode Blokken Specifiek */
+.methode-block {
+    text-decoration: none;
+    color: white;
+}
+.mw { background: linear-gradient(135deg, #00b4db, #0083b0); }
+.gr { background: linear-gradient(135deg, #11998e, #38ef7d); }
+
+.methode-block h3 { font-size: 1.5rem; margin-bottom: 5px; }
+.methode-block p { opacity: 0.9; font-size: 0.9rem; }
+
+/* Inhoud van de klassenblokken */
+.klass-block h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #1e293b;
+}
+
+/* Knoppen binnen de blokken (Wiskunde A / B) */
+.split-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.sub-block {
+    flex: 1;
+    text-align: center;
+    background-color: #f8fafc;
+    color: #334155;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.15s ease;
+}
+
+/* Hover effecten voor wiskunde A & B knoppen per stroom */
+.onderbouw .sub-block:hover { background-color: #3b82f6; color: white; border-color: #3b82f6; }
+.havo .sub-block:hover { background-color: #f97316; color: white; border-color: #f97316; }
+.vwo .sub-block:hover { background-color: #8b5cf6; color: white; border-color: #8b5cf6; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Mobiel vriendelijk maken */
+@media (max-width: 768px) {
+    .grid-methoden, .grid-2 { grid-template-columns: 1fr; }
+    .split-buttons { flex-direction: column; }
+}
