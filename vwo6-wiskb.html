@@ -3,39 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6 VWO - Wiskunde B</title>
+    <title>6 VWO - Wiskunde B - Interactief</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Extra specifieke styling voor de media, software en rekenmachines */
-        .topic-image {
-            width: 100%;
-            max-height: 150px;
-            object-fit: contain;
+        /* Specifieke styling voor de interactieve wiskunde-simulaties */
+        .simulation-container {
             background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .sim-canvas {
+            background: white;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            max-width: 100%;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        .sim-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: #334155;
+            background: #ffffff;
+            padding: 10px;
             border-radius: 6px;
-            margin: 10px 0;
-            padding: 5px;
             border: 1px solid #e2e8f0;
         }
 
-        .topic-list {
-            text-align: left;
-            margin: 10px 0 20px 20px;
-            font-size: 0.9rem;
-            color: #334155;
+        .sim-controls label {
+            font-weight: 600;
         }
 
-        .topic-list li {
-            margin-bottom: 5px;
+        .sim-slider {
+            width: 100%;
+            max-width: 200px;
+            cursor: pointer;
         }
 
-        .topic-list a {
-            color: #3b82f6;
-            text-decoration: none;
-        }
-
-        .topic-list a:hover {
-            text-decoration: underline;
+        .sim-value {
+            font-family: monospace;
+            background: #e2e8f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
         }
 
         /* Toolkit Secties */
@@ -154,8 +173,8 @@
 
     <header style="background: linear-gradient(135deg, #8b5cf6, #0f172a); border-bottom: 4px solid #a78bfa;">
         <div class="container">
-            <h1>5 VWO — Wiskunde B</h1>
-            <p>Lesmateriaal, Examendomeinen & Digitale Tools</p>
+            <h1>6 VWO — Wiskunde B</h1>
+            <p>Interactieve Simulaties, Examenprogramma & Tools</p>
             <div class="methoden-links">
                 <a href="index.html" class="methoden-btn">← Terug naar Dashboard</a>
             </div>
@@ -164,182 +183,382 @@
 
     <main class="container">
 
-        <h2 class="section-title">Examendomeinen</h2>
-        <section class="grid-3">
-            <div class="klass-block vwo" style="border-left-color: #a78bfa;">
-                <h3>Domeinen A & B</h3>
-                <p><strong>Vaardigheden & Functies</strong></p>
-                <p style="color: #64748b; font-size: 0.85rem;">Voorrangsregels, stelsels, breuksplitsen, symmetrie, logaritmen en het onderzoeken van functies en grafieken.</p>
-                <a href="https://www.examenblad.nl/2025/vwo/vakken/exacte-vakken/wiskunde-b-vwo" target="_blank" style="font-size: 0.8rem; color:#8b5cf6; text-decoration:none; font-weight:bold; display:block; margin-top:10px;">Examenprogramma ↗</a>
-            </div>
-            <div class="klass-block vwo" style="border-left-color: #a78bfa;">
-                <h3>Domeinen C & D</h3>
-                <p><strong>Analyse & Goniometrie</strong></p>
-                <p style="color: #64748b; font-size: 0.85rem;">Differentiaal- en integraalrekening (afgeleiden en primitieven) en goniometrische functies/formules.</p>
-            </div>
-            <div class="klass-block vwo" style="border-left-color: #a78bfa;">
-                <h3>Domeinen E & F</h3>
-                <p><strong>Meetkunde & Keuze</strong></p>
-                <p style="color: #64748b; font-size: 0.85rem;">Meetkunde met coördinaten (lijnen, cirkels, hoeken, afstanden, zwaartepunten) en specifieke keuze-onderwerpen.</p>
-            </div>
-        </section>
-
-        <h2 class="section-title">Beschikbare Onderwerpen</h2>
+        <h2 class="section-title">Interactieve Examenonderwerpen</h2>
         <section class="grid-3">
             
             <div class="klass-block" style="border-top: 4px solid #10b981; padding: 20px;">
                 <h4 style="color:#10b981; margin-bottom:5px;">Onderwerp 1</h4>
-                <h3>Exponentiële & Logaritmische functies</h3>
-                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&auto=format&fit=crop&q=60" alt="Exponentiele en Logaritmische functies" class="topic-image">
-                <ul class="topic-list">
-                    <li><a href="https://www.lyceo.nl" target="_blank">1. Naar kleinere/grotere tijdseenheid (Lyceo)</a></li>
-                    <li><a href="https://www.wiskundeacademie.nl" target="_blank">2. Formules omvormen (Wisk Academie)</a></li>
-                    <li>3. Logaritmische ongelijkheid oplossen</li>
-                    <li><a href="https://www.wiskundeacademie.nl" target="_blank">4. Oplossen met substitutie</a></li>
-                </ul>
+                <h3>Exp. & Log. Grondtalen</h3>
+                <p style="font-size:0.85rem; color:#64748b;">Versleep de slider om te zien hoe het grondtal $g$ de groei- en logaritmische curve beïnvloedt.</p>
+                
+                <div class="simulation-container">
+                    <canvas id="canvas-exp" class="sim-canvas" width="260" height="180"></canvas>
+                    <div class="sim-controls">
+                        <div>
+                            <label>Grondtal <span id="val-exp" class="sim-value">2.0</span></label>
+                        </div>
+                        <input type="range" id="slide-exp" class="sim-slider" min="0.2" max="4.0" step="0.1" value="2.0">
+                    </div>
+                </div>
             </div>
 
             <div class="klass-block" style="border-top: 4px solid #10b981; padding: 20px;">
                 <h4 style="color:#10b981; margin-bottom:5px;">Onderwerp 2</h4>
-                <h3>Toepassingen van Integreren</h3>
-                <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&auto=format&fit=crop&q=60" alt="Toepassingen van Integreren" class="topic-image">
-                <ul class="topic-list">
-                    <li><a href="https://www.youtube.com/watch?v=SCHIq7gc5Pg" target="_blank">1. Primitiveren (YouTube)</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=7IAFD1gVrdM" target="_blank">2. Oppervlakte onder grafiek I</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=4KPD1KGeM-A" target="_blank">3. Oppervlakte onder grafiek II</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=psVfG-DXIek" target="_blank">4. Verhoudingen van oppervlakten</a></li>
-                </ul>
+                <h3>Riemann-som (Integreren)</h3>
+                <p style="font-size:0.85rem; color:#64748b;">Verhoog het aantal deelintervallen ($n$) om te zien hoe de Riemann-som de exacte integraal benadert.</p>
+                
+                <div class="simulation-container">
+                    <canvas id="canvas-integraal" class="sim-canvas" width="260" height="180"></canvas>
+                    <div class="sim-controls">
+                        <div>
+                            <label>Balken ($n$): <span id="val-integraal" class="sim-value">4</span></label>
+                        </div>
+                        <input type="range" id="slide-integraal" class="sim-slider" min="2" max="30" step="1" value="4">
+                    </div>
+                </div>
             </div>
 
             <div class="klass-block" style="border-top: 4px solid #10b981; padding: 20px;">
                 <h4 style="color:#10b981; margin-bottom:5px;">Onderwerp 3</h4>
-                <h3>Bewegingsvergelijkingen</h3>
-                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400&auto=format&fit=crop&q=60" alt="Bewegingsvergelijkingen" class="topic-image">
-                <ul class="topic-list">
-                    <li>1. Bewegen langs lijn of cirkel</li>
-                    <li>2. Periodieke bewegingen</li>
-                    <li>3. Snelheid en raaklijn</li>
-                    <li>4. Versnellingsvectoren</li>
-                </ul>
+                <h3>Lissajous & Vectoren</h3>
+                <p style="font-size:0.85rem; color:#64748b;">Bekijk de baanversnelling en de snelheidsvector (groene pijl) live langs de parameterbaan.</p>
+                
+                <div class="simulation-container">
+                    <canvas id="canvas-vector" class="sim-canvas" width="260" height="180"></canvas>
+                    <div class="sim-controls">
+                        <span style="font-size:0.75rem; color:#64748b;">Geanimeerd via HTML5 Canvas</span>
+                    </div>
+                </div>
             </div>
 
             <div class="klass-block" style="border-top: 4px solid #10b981; padding: 20px;">
                 <h4 style="color:#10b981; margin-bottom:5px;">Onderwerp 4</h4>
-                <h3>Goniometrische formules</h3>
-                <img src="https://images.unsplash.com/photo-1616400619175-5ebd30078d98?w=400&auto=format&fit=crop&q=60" alt="Goniometrische formules" class="topic-image">
-                <ul class="topic-list">
-                    <li>1. Somformules toepassen</li>
-                    <li>2. Goniometrisch herleiden</li>
-                    <li>3. Complexe vergelijkingen</li>
-                    <li>4. Parametervoorstellingen</li>
-                </ul>
+                <h3>De Eenheidscirkel</h3>
+                <p style="font-size:0.85rem; color:#64748b;">Draai de hoek $\alpha$ in radialen en zie direct hoe de hoogte correspondeert met de sinusgolf.</p>
+                
+                <div class="simulation-container">
+                    <canvas id="canvas-gonio" class="sim-canvas" width="260" height="180"></canvas>
+                    <div class="sim-controls">
+                        <div>
+                            <label>Hoek: <span id="val-gonio" class="sim-value">0.79</span> rad</label>
+                        </div>
+                        <input type="range" id="slide-gonio" class="sim-slider" min="0" max="6.28" step="0.05" value="0.78">
+                    </div>
+                </div>
             </div>
 
             <div class="klass-block" style="border-top: 4px solid #10b981; padding: 20px;">
                 <h4 style="color:#10b981; margin-bottom:5px;">Onderwerp 5</h4>
-                <h3>Functies Onderzoeken</h3>
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&auto=format&fit=crop&q=60" alt="Functies Onderzoeken" class="topic-image">
-                <ul class="topic-list">
-                    <li>1. Absolute waarden functies</li>
-                    <li>2. Extreme waarden & buigpunten</li>
-                    <li>3. Scheve asymptoten & limieten</li>
-                    <li>4. Perforaties in grafieken</li>
-                </ul>
+                <h3>Extreme Waarden & Afgeleide</h3>
+                <p style="font-size:0.85rem; color:#64748b;">Verschuif het punt $x$. Waar de helling (raaklijn) horizontaal is ($f'(x)=0$), ligt een extremum.</p>
+                
+                <div class="simulation-container">
+                    <canvas id="canvas-afgeleide" class="sim-canvas" width="260" height="180"></canvas>
+                    <div class="sim-controls">
+                        <div>
+                            <label>Punt $x$: <span id="val-afgeleide" class="sim-value">0.0</span></label>
+                        </div>
+                        <input type="range" id="slide-afgeleide" class="sim-slider" min="-1.5" max="1.5" step="0.1" value="0.0">
+                    </div>
+                </div>
             </div>
 
             <div class="klass-block" style="border-top: 4px solid #10b981; padding: 20px;">
                 <h4 style="color:#10b981; margin-bottom:5px;">Onderwerp 6</h4>
-                <h3>Afsluiting Meetkunde</h3>
-                <img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=400&auto=format&fit=crop&q=60" alt="Afsluiting Meetkunde" class="topic-image">
-                <ul class="topic-list">
-                    <li>1. Bijzondere lijnen in driehoeken</li>
-                    <li>2. Lijnen, cirkels en snijpunten</li>
-                    <li>3. Afstanden en hoeken berekenen</li>
-                    <li>4. Zwaartepunten bepalen</li>
-                </ul>
+                <h3>Lijn & Cirkel (Snijpunten)</h3>
+                <p style="font-size:0.85rem; color:#64748b;">Verander de afstand $d$ van de lijn tot de oorsprong om te schakelen tussen 0, 1 (raaklijn) of 2 snijpunten.</p>
+                
+                <div class="simulation-container">
+                    <canvas id="canvas-meetkunde" class="sim-canvas" width="260" height="180"></canvas>
+                    <div class="sim-controls">
+                        <div>
+                            <label>Afstand $d$: <span id="val-meetkunde" class="sim-value">40</span></label>
+                        </div>
+                        <input type="range" id="slide-meetkunde" class="sim-slider" min="0" max="80" step="2" value="40">
+                    </div>
+                </div>
             </div>
 
         </section>
-
 
         <section class="toolkit-section" style="border-top: 5px solid #3b82f6;">
             <h2>Wiskunde Software & Programma's</h2>
-            <p style="color:#64748b; font-size:0.9rem;">Klik op de onderstaande rechthoekige kaarten om direct naar de online plot- en meetkundesoftware te gaan.</p>
-            
             <div class="grid-software">
-                
                 <a href="https://www.geogebra.org" target="_blank" class="software-card">
-                    <img src="https://www.geogebra.org/apps/icons/geogebra.png" alt="GeoGebra Logo" class="software-img">
-                    <div class="software-info">
-                        <h4>GeoGebra</h4>
-                        <p>Interactieve meetkunde, algebra, en calculus applicatie.</p>
-                    </div>
+                    <img src="https://www.geogebra.org/apps/icons/geogebra.png" alt="GeoGebra" class="software-img">
+                    <div class="software-info"><h4>GeoGebra</h4><p>Interactieve meetkunde en algebra.</p></div>
                 </a>
-
                 <a href="https://www.desmos.com" target="_blank" class="software-card">
-                    <img src="https://www.desmos.com/assets/img/apps/graphing/apple-touch-icon.png" alt="Desmos Logo" class="software-img">
-                    <div class="software-info">
-                        <h4>Desmos</h4>
-                        <p>Prachtige en snelle online grafische rekenmachine.</p>
-                    </div>
+                    <img src="https://www.desmos.com/assets/img/apps/graphing/apple-touch-icon.png" alt="Desmos" class="software-img">
+                    <div class="software-info"><h4>Desmos</h4><p>Snelle online grafische rekenmachine.</p></div>
                 </a>
-
                 <a href="https://cabri.com" target="_blank" class="software-card">
-                    <img src="https://cabri.com/wp-content/uploads/2020/11/cropped-favicon-cabri-192x192.png" alt="Cabri Logo" class="software-img">
-                    <div class="software-info">
-                        <h4>Cabri Geometry</h4>
-                        <p>Krachtige software voor dynamische meetkunde en 3D-modellen.</p>
-                    </div>
+                    <img src="https://cabri.com/wp-content/uploads/2020/11/cropped-favicon-cabri-192x192.png" alt="Cabri" class="software-img">
+                    <div class="software-info"><h4>Cabri Geometry</h4><p>Dynamische meetkunde software.</p></div>
                 </a>
-
             </div>
         </section>
-
 
         <section class="toolkit-section" style="border-top: 5px solid #8b5cf6; margin-bottom: 60px;">
             <h2 style="text-align: center;">Grafische Rekenmachines (GR)</h2>
-            <p style="color:#64748b; font-size:0.9rem; text-align: center; margin-bottom: 30px;">Handleidingen, emulators en webversies van de goedgekeurde examenmachines.</p>
-            
             <div class="grid-calculators">
-                
                 <div class="calc-wrapper">
                     <a href="https://education.ti.com" target="_blank" class="calc-link">
-                        <div class="calc-circle">
-                            <img src="https://education.ti.com/-/media/images/ti-education/products/calculators/graphing/ti-84-plus-ce-t/ti84pluscet_python_device_front_600x600.png" alt="TI-84 Plus CE" class="calc-img">
-                        </div>
-                        Texas Instruments
-                        <span>TI-84 Plus (CE)</span>
+                        <div class="calc-circle"><img src="https://education.ti.com/-/media/images/ti-education/products/calculators/graphing/ti-84-plus-ce-t/ti84pluscet_python_device_front_600x600.png" alt="TI" class="calc-img"></div>
+                        Texas Instruments <span>TI-84 Plus (CE)</span>
                     </a>
                 </div>
-
                 <div class="calc-wrapper">
                     <a href="https://www.casio-education.nl" target="_blank" class="calc-link">
-                        <div class="calc-circle">
-                            <img src="https://www.casio-europe.com/images/fx-CG50_Front_High.png" alt="Casio fx-CG50" class="calc-img" style="width: 60px; height: 95px;">
-                        </div>
-                        Casio
-                        <span>fx-CG50 / FX series</span>
+                        <div class="calc-circle"><img src="https://www.casio-europe.com/images/fx-CG50_Front_High.png" alt="Casio" class="calc-img" style="width:60px; height:95px;"></div>
+                        Casio <span>fx-CG50</span>
                     </a>
                 </div>
-
                 <div class="calc-wrapper">
                     <a href="https://www.numworks.com/nl/" target="_blank" class="calc-link">
-                        <div class="calc-circle">
-                            <img src="https://www.numworks.com/assets/images/simulator/device.png" alt="NumWorks GR" class="calc-img" style="width: 70px; height: 95px;">
-                        </div>
-                        NumWorks
-                        <span>De Moderne GR</span>
+                        <div class="calc-circle"><img src="https://www.numworks.com/assets/images/simulator/device.png" alt="Numworks" class="calc-img" style="width:70px; height:95px;"></div>
+                        NumWorks <span>De Moderne GR</span>
                     </a>
                 </div>
-
             </div>
         </section>
-
     </main>
 
     <footer>
-        <p>&copy; 2026 - Wiskunde Klaslokaal | Examenvoorbereiding VWO 5</p>
+        <p>&copy; 2026 - Wiskunde Klaslokaal | Examenjaar VWO 6</p>
     </footer>
 
+    <script>
+        // --- SIMULATIE 1: EXPONENTIEEL & LOGARITMISCH ---
+        const s1_slide = document.getElementById('slide-exp');
+        const s1_val = document.getElementById('val-exp');
+        const s1_can = document.getElementById('canvas-exp');
+        const ctx1 = s1_can.getContext('2d');
+
+        function drawExp() {
+            let g = parseFloat(s1_slide.value);
+            s1_val.innerText = g.toFixed(1);
+            ctx1.clearRect(0, 0, 260, 180);
+            
+            // Assenstelsel
+            ctx1.strokeStyle = '#cbd5e1'; ctx1.lineWidth = 1;
+            ctx1.beginPath(); ctx1.moveTo(20, 150); ctx1.lineTo(240, 150); ctx1.moveTo(40, 10); ctx1.lineTo(40, 170); ctx1.stroke();
+            
+            // Teken f(x) = g^x
+            ctx1.strokeStyle = '#3b82f6'; ctx1.lineWidth = 2; ctx1.beginPath();
+            for(let px=20; px<240; px++) {
+                let x = (px - 40) / 40; 
+                let y = Math.pow(g, x);
+                let py = 150 - (y * 30);
+                if(py >= 10 && py <= 170) {
+                    if(px === 20) ctx1.moveTo(px, py); else ctx1.lineTo(px, py);
+                }
+            }
+            ctx1.stroke();
+            ctx1.fillStyle = '#3b82f6'; ctx1.fillText("g^x", 210, 30);
+        }
+        s1_slide.addEventListener('input', drawExp); drawExp();
+
+        // --- SIMULATIE 2: RIEMANN-SOM (INTEGREREN) ---
+        const s2_slide = document.getElementById('slide-integraal');
+        const s2_val = document.getElementById('val-integraal');
+        const s2_can = document.getElementById('canvas-integraal');
+        const ctx2 = s2_can.getContext('2d');
+
+        function drawRiemann() {
+            let n = parseInt(s2_slide.value);
+            s2_val.innerText = n;
+            ctx2.clearRect(0, 0, 260, 180);
+            
+            // Assenstelsel
+            ctx2.strokeStyle = '#cbd5e1'; ctx2.beginPath(); ctx2.moveTo(20, 150); ctx2.lineTo(240, 150); ctx2.moveTo(30, 20); ctx2.lineTo(30, 160); ctx2.stroke();
+            
+            // Functie: f(x) = 0.005*x^2 + 10
+            function f(x) { return 0.004 * Math.pow(x, 2) + 15; }
+            
+            let a = 10, b = 210;
+            let w = (b - a) / n;
+            
+            // Teken Balken (Riemann-som)
+            ctx2.fillStyle = 'rgba(16, 185, 129, 0.3)';
+            ctx2.strokeStyle = '#10b981';
+            for(let i=0; i<n; i++) {
+                let x = a + i*w;
+                let h = f(x);
+                ctx2.fillRect(x, 150 - h, w, h);
+                ctx2.strokeRect(x, 150 - h, w, h);
+            }
+            
+            // Teken de echte kromme line bovenop
+            ctx2.strokeStyle = '#047857'; ctx2.lineWidth = 2; ctx2.beginPath();
+            for(let x=a; x<=b; x++) {
+                if(x===a) ctx2.moveTo(x, 150 - f(x)); else ctx2.lineTo(x, 150 - f(x));
+            }
+            ctx2.stroke();
+        }
+        s2_slide.addEventListener('input', drawRiemann); drawRiemann();
+
+        // --- SIMULATIE 3: BEWEGINGSVERGELIJKINGEN (ANIMATIE) ---
+        const s3_can = document.getElementById('canvas-vector');
+        const ctx3 = s3_can.getContext('2d');
+        let t = 0;
+
+        function animVector() {
+            ctx3.clearRect(0, 0, 260, 180);
+            // Middelpunt assen
+            let cx = 130, cy = 90;
+            
+            // Teken baan (Lissajous)
+            ctx3.strokeStyle = '#e2e8f0'; ctx3.lineWidth = 1; ctx3.beginPath();
+            for(let i=0; i<6.28; i+=0.05) {
+                let bx = cx + Math.sin(2*i)*80;
+                let by = cy + Math.cos(i)*60;
+                if(i===0) ctx3.moveTo(bx, by); else ctx3.lineTo(bx, by);
+            }
+            ctx3.stroke();
+            
+            // Huidige positie berekenen
+            let x = cx + Math.sin(2*t)*80;
+            let y = cy + Math.cos(t)*60;
+            
+            // Snelheidsvector (Afgeleide): x' = 160*cos(2t), y' = -60*sin(t)
+            let vx = Math.cos(2*t) * 40;
+            let vy = -Math.sin(t) * 40;
+            
+            // Teken Snelheidspijl (Groen)
+            ctx3.strokeStyle = '#10b981'; ctx3.lineWidth = 3; ctx3.beginPath();
+            ctx3.moveTo(x, y); ctx3.lineTo(x + vx, y + vy); ctx3.stroke();
+            
+            // Teken bewegend punt
+            ctx3.fillStyle = '#8b5cf6'; ctx3.beginPath(); ctx3.arc(x, y, 6, 0, 2*Math.PI); ctx3.fill();
+            
+            t += 0.02;
+            requestAnimationFrame(animVector);
+        }
+        animVector();
+
+        // --- SIMULATIE 4: EENHEIDSCIRKEL (GONIO) ---
+        const s4_slide = document.getElementById('slide-gonio');
+        const s4_val = document.getElementById('val-gonio');
+        const s4_can = document.getElementById('canvas-gonio');
+        const ctx4 = s4_can.getContext('2d');
+
+        function drawGonio() {
+            let rad = parseFloat(s4_slide.value);
+            s4_val.innerText = rad.toFixed(2);
+            ctx4.clearRect(0, 0, 260, 180);
+            
+            let cx = 70, cy = 90, r = 50;
+            
+            // Cirkel
+            ctx4.strokeStyle = '#cbd5e1'; ctx4.beginPath(); ctx4.arc(cx, cy, r, 0, 2*Math.PI); ctx4.stroke();
+            ctx4.beginPath(); ctx4.moveTo(cx-60, cy); ctx4.lineTo(cx+60, cy); ctx4.moveTo(cx, cy-60); ctx4.lineTo(cx, cy+60); ctx4.stroke();
+            
+            // Wijzer & Sinus projectie
+            let px = cx + Math.cos(-rad)*r;
+            let py = cy + Math.sin(-rad)*r;
+            
+            ctx4.strokeStyle = '#64748b'; ctx4.beginPath(); ctx4.moveTo(cx, cy); ctx4.lineTo(px, py); ctx4.stroke();
+            ctx4.strokeStyle = '#ef4444'; ctx4.lineWidth = 2; ctx4.beginPath(); ctx4.moveTo(px, cy); ctx4.lineTo(px, py); ctx4.stroke(); // Hoogte = sin
+            
+            // Golfvorm rechts genereren
+            ctx4.strokeStyle = '#3b82f6'; ctx4.lineWidth = 1.5; ctx4.beginPath();
+            for(let gx=140; gx<250; gx++) {
+                let gRad = rad - ((gx - 140) / 20);
+                let gy = cy + Math.sin(-gRad)*r;
+                if(gx===140) ctx4.moveTo(gx, gy); else ctx4.lineTo(gx, gy);
+            }
+            ctx4.stroke();
+            
+            // Rode stip koppeling op golf
+            ctx4.fillStyle = '#ef4444'; ctx4.beginPath(); ctx4.arc(140, py, 4, 0, 2*Math.PI); ctx4.fill();
+        }
+        s4_slide.addEventListener('input', drawGonio); drawGonio();
+
+        // --- SIMULATIE 5: EXTREME WAARDEN ---
+        const s5_slide = document.getElementById('slide-afgeleide');
+        const s5_val = document.getElementById('val-afgeleide');
+        const s5_can = document.getElementById('canvas-afgeleide');
+        const ctx5 = s5_can.getContext('2d');
+
+        function drawAfgeleide() {
+            let x0 = parseFloat(s5_slide.value);
+            s5_val.innerText = x0.toFixed(1);
+            ctx5.clearRect(0, 0, 260, 180);
+            
+            // Assen centeren
+            let cx = 130, cy = 90;
+            ctx5.strokeStyle = '#cbd5e1'; ctx5.beginPath(); ctx5.moveTo(20, cy); ctx5.lineTo(240, cy); ctx5.stroke();
+            
+            // Functie: f(x) = x^3 - 1.2x
+            function f(x) { return (x*x*x - 1.2*x); }
+            function df(x) { return (3*x*x - 1.2); } // Afgeleide
+            
+            // Curve plotten
+            ctx5.strokeStyle = '#3b82f6'; ctx5.lineWidth = 2; ctx5.beginPath();
+            for(let px=20; px<240; px++) {
+                let x = (px - cx) / 60;
+                let y = f(x);
+                let py = cy - (y * 60);
+                if(px===20) ctx5.moveTo(px, py); else ctx5.lineTo(px, py);
+            }
+            ctx5.stroke();
+            
+            // Raaklijn bepalen bij gekozen x0
+            let y0 = f(x0);
+            let rc = df(x0);
+            
+            let p_x0 = cx + x0*60;
+            let p_y0 = cy - y0*60;
+            
+            // Teken raaklijnstukje
+            ctx5.strokeStyle = rc === 0 ? '#10b981' : '#f59e0b'; ctx5.lineWidth = 2;
+            ctx5.beginPath();
+            ctx5.moveTo(p_x0 - 30, p_y0 + rc*30);
+            ctx5.lineTo(p_x0 + 30, p_y0 - rc*30);
+            ctx5.stroke();
+            
+            // Punt markeren
+            ctx5.fillStyle = '#1e293b'; ctx5.beginPath(); ctx5.arc(p_x0, p_y0, 5, 0, 2*Math.PI); ctx5.fill();
+        }
+        s5_slide.addEventListener('input', drawAfgeleide); drawAfgeleide();
+
+        // --- SIMULATIE 6: ANALYTISCHE MEETKUNDE ---
+        const s6_slide = document.getElementById('slide-meetkunde');
+        const s6_val = document.getElementById('val-meetkunde');
+        const s6_can = document.getElementById('canvas-meetkunde');
+        const ctx6 = s6_can.getContext('2d');
+
+        function drawMeetkunde() {
+            let d = parseInt(s6_slide.value);
+            s6_val.innerText = d;
+            ctx6.clearRect(0, 0, 260, 180);
+            
+            let cx = 130, cy = 90, r = 50;
+            
+            // Teken vaste cirkel
+            ctx6.strokeStyle = '#8b5cf6'; ctx6.lineWidth = 2;
+            ctx6.beginPath(); ctx6.arc(cx, cy, r, 0, 2*Math.PI); ctx6.stroke();
+            
+            // Teken variërende verticale snijlijn
+            let lx = cx - 50 + d;
+            ctx6.strokeStyle = '#334155'; ctx6.lineWidth = 1.5;
+            ctx6.beginPath(); ctx6.moveTo(lx, 20); ctx6.lineTo(lx, 160); ctx6.stroke();
+            
+            // Bereken snijpunten via Pythagoras (r^2 = dx^2 + dy^2)
+            let dx = Math.abs(lx - cx);
+            if(dx < r) {
+                // Twee snijpunten
+                let dy = Math.sqrt(r*r - dx*dx);
+                ctx6.fillStyle = '#ef4444';
+                ctx6.beginPath(); ctx6.arc(lx, cy - dy, 5, 0, 2*Math.PI); ctx6.arc(lx, cy + dy, 5, 0, 2*Math.PI); ctx6.fill();
+            } else if (Math.floor(dx) === r) {
+                // 1 Raakpunt
+                ctx6.fillStyle = '#10b981';
+                ctx6.beginPath(); ctx6.arc(lx, cy, 6, 0, 2*Math.PI); ctx6.fill();
+            }
+        }
+        s6_slide.addEventListener('input', drawMeetkunde); drawMeetkunde();
+    </script>
 </body>
 </html>
