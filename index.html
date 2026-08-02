@@ -3,155 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiskunde Portaal - VWO 6 Wiskunde B</title>
+    <title>VWO 6 Wiskunde B - Examenportaal</title>
     <link rel="stylesheet" href="style.css">
+    <!-- MathJax voor didactische LaTeX formules -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
-    <!-- Header / Navigatie -->
-    <header class="main-header" style="background-color: #0073aa; color: white; padding: 20px; text-align: center;">
-        <h1>🧮 Wiskunde Online Portaal</h1>
-        <p>Overzicht en interactief lesmateriaal voor het VWO</p>
+    <!-- Header -->
+    <header class="main-header" style="background-color: #0073aa; color: white; padding: 25px 20px; text-align: center;">
+        <h1 style="margin: 0; font-size: 2em;">🧮 Wiskunde Online Portaal</h1>
+        <p style="margin-top: 5px; opacity: 0.9;">Examenprogramma & Didactische hulpmiddelen VWO 6 Wiskunde B</p>
     </header>
 
     <main class="vwo6-wiskb-container" style="font-family: Arial, sans-serif; max-width: 950px; margin: 30px auto; line-height: 1.6; padding: 0 15px;">
 
-        <div class="titel-blok" style="border-bottom: 2px solid #0073aa; padding-bottom: 10px; margin-bottom: 25px;">
-            <h2 style="color: #0073aa; margin: 0;">📐 VWO 6 Wiskunde B — Kernprogramma</h2>
-            <p style="color: #666; margin-top: 5px;">Kies een onderwerp uit het examenprogramma om bronnen, video's en visualisaties te bekijken.</p>
+        <div class="titel-blok" style="border-bottom: 3px solid #0073aa; padding-bottom: 10px; margin-bottom: 25px;">
+            <h2 style="color: #0073aa; margin: 0;">📐 VWO 6 Wiskunde B — Examenoverzicht</h2>
+            <p style="color: #555; margin-top: 5px;">Interactief lesmateriaal, YouTube-videolessen, LaTeX-theorie en 3D-meetkunde.</p>
         </div>
 
         <!-- Onderwerp 1 -->
         <section class="onderwerp-kaart" style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
             <h3 style="color: #333; margin-top: 0;">Onderwerp 1: Exponentiële en Logaritmische functies</h3>
+            <p style="background: #f0f7ff; padding: 10px; border-left: 4px solid #0073aa; font-size: 0.95em;">
+                <strong>Kernformules:</strong> $g^x = y \iff x = \log_g(y)$ &nbsp;|&nbsp; $f(t) = N_0 \cdot g^t$
+            </p>
             <ol style="padding-left: 20px;">
-                <li><a href="#">Exponentieel – naar kleiner/groter tijdseenheid (Lyceo)</a></li>
-                <li><a href="#">Exponentieel en Logaritmisch – formules omvormen (Wisk Academie)</a></li>
-                <li><a href="#">Logarithmische ongelijkheid oplossen</a></li>
-                <li><a href="#">Exp en Log vergelijkingen oplossen met substitutie (Wisk Academie)</a></li>
-                <li><a href="#">Verschillende onderwerpen Exp en Log functies</a></li>
-                <li><a href="https://www.google.nl/search?q=exponentiele+en+logaritmische+functies+vwo+6+wiskunde+b&tbm=isch" target="_blank">Afbeeldingen van Exponentiele- en Logaritmische functies *</a></li>
+                <li><span style="color:#d9534f;">[📚 Theorie]</span> Exponentieel – naar kleiner/groter tijdseenheid (Lyceo)</li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> Exponentieel en Logaritmisch – formules omvormen (Wisk Academie)</li>
+                <li><span style="color:#d9534f;">[📚 Theorie]</span> Logaritmische ongelijkheid oplossen</li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> Exp en Log vergelijkingen oplossen met substitutie (Wisk Academie)</li>
+                <li><span style="color:#d9534f;">[📚 Theorie]</span> Verschillende onderwerpen Exp en Log functies</li>
+                <li><span style="color:#5cb85c;">[🖼️ Afbeeldingen]</span> <a href="https://www.google.nl/search?q=exponentiele+en+logaritmische+functies+vwo+6+wiskunde+b&tbm=isch" target="_blank">Exponentiële- en Logaritmische functies op een rij</a></li>
             </ol>
             <div style="margin-top: 15px;">
-                <a href="#" style="background-color: #0073aa; color: white; padding: 8px 18px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">Inschrijven</a>
+                <a href="#" style="background-color: #0073aa; color: white; padding: 8px 18px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold;">Inschrijven lesmodule</a>
             </div>
         </section>
 
         <!-- Onderwerp 2 -->
         <section class="onderwerp-kaart" style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <h3 style="color: #333; margin-top: 0;">Onderwerp 2: Toepassingen van Integreren</h3>
+            <h3 style="color: #333; margin-top: 0;">Onderwerp 2: Toepassingen van Integreren & Omwentelingslichamen</h3>
+            <p style="background: #f0f7ff; padding: 10px; border-left: 4px solid #0073aa; font-size: 0.95em;">
+                <strong>Oppervlakte:</strong> $O = \int_{a}^{b} f(x) \, dx$ &nbsp;|&nbsp; <strong>Inhoud om X-as:</strong> $I = \pi \int_{a}^{b} (f(x))^2 \, dx$
+            </p>
             <ol style="padding-left: 20px;">
-                <li><a href="https://www.youtube.com/watch?v=SCHIq7gc5Pg" target="_blank">Primitiveren (VWO wiskunde B) (youtube.com)</a></li>
-                <li><a href="https://www.youtube.com/watch?v=7IAFD1gVrdM" target="_blank">Oppervlakte onder een grafiek deel I (VWO wiskunde B) (youtube.com)</a></li>
-                <li><a href="https://www.youtube.com/watch?v=4KPD1KGeM-A" target="_blank">Oppervlakte onder een grafiek deel II (VWO wiskunde B) (youtube.com)</a></li>
-                <li><a href="https://www.youtube.com/watch?v=psVfG-DXIek" target="_blank">Verhoudingen van oppervlakten (VWO wiskunde B) (youtube.com)</a></li>
-                <li><a href="https://www.google.nl/search?q=oppervlakte+onder+de+kromme+wiskunde+b+vwo&tbm=isch" target="_blank">Oppervlakte onder de kromme wiskunde b vwo – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=primitiveren+vwo+6+wiskunde+b&tbm=isch" target="_blank">Primitiveren – Afbeeldingen *</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?v=SCHIq7gc5Pg" target="_blank">Primitiveren (VWO wiskunde B)</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?v=7IAFD1gVrdM" target="_blank">Oppervlakte onder een grafiek deel I</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?v=4KPD1KGeM-A" target="_blank">Oppervlakte onder een grafiek deel II</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?v=psVfG-DXIek" target="_blank">Verhoudingen van oppervlakten</a></li>
+                <li><span style="color:#5cb85c;">[🖼️ Afbeeldingen]</span> <a href="https://www.google.nl/search?q=oppervlakte+onder+de+kromme+wiskunde+b+vwo&tbm=isch" target="_blank">Oppervlakte onder de kromme wiskunde B VWO</a></li>
             </ol>
 
-            <h4 style="color: #444; margin-top: 20px;">Omwentelingslichamen</h4>
+            <h4 style="color: #444; margin-top: 20px;">🌀 Omwentelingslichamen & 3D Geometrie</h4>
             <ol style="padding-left: 20px;">
-                <li><a href="https://video.scholieren.com/video/integreren-wentelen-om-de-x-as-vwo-wiskunde-b" target="_blank">Wentelen om de x – as</a></li>
-                <li><a href="https://www.youtube.com/watch?v=DLxCm7oXe-w" target="_blank">Wentelen om de y – as</a></li>
-                <li><a href="https://www.youtube.com/watch?v=gdMOM2c7oQ4" target="_blank">Wentelen om de y – as!</a></li>
-                <li><a href="https://www.youtube.com/watch?v=arJQ1ICI0sM" target="_blank">Bolschijf en Kegelsnede</a></li>
-                <li><a href="https://www.google.nl/search?q=wentelen+om+de+x-as+en+de+y-as+wiskunde+b+vwo&tbm=isch" target="_blank">Wentelen om de x – as en de y – as – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=omwentelingslichamen+wiskunde+b+vwo&tbm=isch" target="_blank">Omwentelingslichamen – Afbeeldingen *</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://video.scholieren.com/video/integreren-wentelen-om-de-x-as-vwo-wiskunde-b" target="_blank">Wentelen om de x–as</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?v=DLxCm7oXe-w" target="_blank">Wentelen om de y–as</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?v=arJQ1ICI0sM" target="_blank">Bolschijf en Kegelsnede</a></li>
             </ol>
+
+            <!-- Cabri 3D / Geometrie integratie -->
+            <div style="background-color: #f4f9fc; border-left: 4px solid #0275d8; padding: 12px; margin-top: 15px; border-radius: 0 6px 6px 0;">
+                <strong>🌐 Cabri 3D & 3D Geometrie Visualisatie voor Omwentelingslichamen:</strong>
+                <ul style="margin-top: 5px; padding-left: 20px;">
+                    <li><a href="https://www.geogebra.org/3d" target="_blank">GeoGebra 3D – Visualiseer omwentelingslichamen rond x- en y-as</a></li>
+                    <li><a href="https://www.cabri.com/en/enterprise/cabri-3d/" target="_blank">Cabri 3D Software – Ruimtelijke figuren en roterende lichamen</a></li>
+                </ul>
+            </div>
         </section>
 
         <!-- Onderwerp 3 -->
         <section class="onderwerp-kaart" style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
             <h3 style="color: #333; margin-top: 0;">Onderwerp 3: Bewegingsvergelijkingen (Parametervoorstellingen)</h3>
+            <p style="background: #f0f7ff; padding: 10px; border-left: 4px solid #0073aa; font-size: 0.95em;">
+                <strong>Baansnelheid:</strong> $v = \sqrt{(x'(t))^2 + (y'(t))^2}$ &nbsp;|&nbsp; <strong>Vector:</strong> $\vec{v}(t) = \binom{x'(t)}{y'(t)}$
+            </p>
             <ol style="padding-left: 20px;">
-                <li><a href="https://www.hhofstede.nl/modules/parametersnelheid.htm" target="_blank">Baansnelheid</a></li>
-                <li><a href="https://www.youtube.com/watch?v=rtnn4129AQQ" target="_blank">Bewegingsvergelijking, baansnelheid en baanversnelling</a></li>
-                <li><a href="https://www.youtube.com/watch?v=C6HoW9DcsqQ" target="_blank">Bewegingsvergelijkingen – een voorbeeld opgave</a></li>
-                <li><a href="https://www.youtube.com/watch?v=MywrwClqYAg" target="_blank">Baanversnelling afleiding</a></li>
-                <li><a href="https://www.youtube.com/watch?v=9GvXWPYkBFk&list=PLaAhsKkREXva-DaS8lKukH6Ccn9VhmAo8&index=1" target="_blank">Examen vwo wisk B 2022-1 Opgave 1 t/m 17</a></li>
-                <li><a href="https://www.youtube.com/c/24math/videos" target="_blank">24Math</a></li>
-                <li><a href="https://www.youtube.com/watch?app=desktop&v=5iYFRqNCvos" target="_blank">Bewegingsvergelijkingen van meebewegende punten</a></li>
-                <li><a href="https://www.hhofstede.nl/modules/snelheidvectoren.htm" target="_blank">Snelheidsvectoren, Grootte van de snelheid, Richting van de snelheid</a></li>
+                <li><span style="color:#d9534f;">[📚 Theorie]</span> <a href="https://www.hhofstede.nl/modules/parametersnelheid.htm" target="_blank">Baansnelheid (H. Hofstede)</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?v=rtnn4129AQQ" target="_blank">Bewegingsvergelijking, baansnelheid en baanversnelling</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?v=MywrwClqYAg" target="_blank">Baanversnelling afleiding</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?app=desktop&v=5iYFRqNCvos" target="_blank">Bewegingsvergelijkingen van meebewegende punten</a></li>
             </ol>
         </section>
 
-        <!-- Onderwerp 4 -->
+        <!-- Onderwerp 4 met Geïntegreerde Interactieve Eenheidscirkel -->
         <section class="onderwerp-kaart" style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <h3 style="color: #333; margin-top: 0;">Onderwerp 4: Goniometrische formules</h3>
+            <h3 style="color: #333; margin-top: 0;">Onderwerp 4: Goniometrische formules & De Eenheidscirkel</h3>
+            <p style="background: #f0f7ff; padding: 10px; border-left: 4px solid #0073aa; font-size: 0.95em;">
+                <strong>Hoofdformule:</strong> $\sin^2(\theta) + \cos^2(\theta) = 1$ &nbsp;|&nbsp; <strong>Punt op cirkel:</strong> $P(\cos\theta, \sin\theta)$
+            </p>
+
+            <!-- 🎯 GEÏNTEGREERDE INTERACTIEVE EENHEIDSCIRKEL MET HOEK THETA -->
+            <div class="gr-tool-box" style="background: #fafafa; border: 1px solid #ccd7e0; padding: 15px; border-radius: 8px; margin: 20px 0; text-align: center;">
+                <h4 style="margin-top:0; color: #0073aa;">📐 Interactive Tool: De Eenheidscirkel (Plaats $(x,y)$ & Hoek $\theta$)</h4>
+                <p style="font-size: 0.9em; color: #555;">Sleep het punt om hoek $\theta$ te veranderen. Bekijk hoe $x = \cos(\theta)$ en $y = \sin(\theta)$ bewegen op de cirkel ($r=1$):</p>
+                <iframe src="https://www.geogebra.org/material/iframe/id/vdf67dae/width/650/height=420/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" 
+                        width="100%" 
+                        height="400px" 
+                        style="border:0px; max-width: 650px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                </iframe>
+            </div>
+
             <ol style="padding-left: 20px;">
-                <li><a href="https://www.google.nl/search?q=de+eenheidscirkel&tbm=isch" target="_blank">De Eenheidscirkel – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=sinusoide&tbm=isch" target="_blank">De Sinusoide – Afbeeldingen *</a></li>
-                <li><a href="https://www.youtube.com/watch?v=0VTgbLjygFw&t=13s" target="_blank">Vergelijkingen sin(x) = A en cos(x) = A oplossen (Wisk Academie)</a></li>
-                <li><a href="https://www.google.nl/search?q=goniometrische+vergelijkingen+oplossen+wiskunde+b&tbm=isch" target="_blank">Goniometrische vergelijkingen – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=afbeeldingen+van+parametervoorstellingen+vwo+wiskunde+b&tbm=isch" target="_blank">Parametervoorstellingen – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=verdubbelingsformules+en+somformules&tbm=isch" target="_blank">Verdubbelingsformules en Somformules – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=tangensfunctie&tbm=isch" target="_blank">De Tangensfunctie – Afbeeldingen *</a></li>
+                <li><span style="color:#0275d8;">[📺 Video]</span> <a href="https://www.youtube.com/watch?v=0VTgbLjygFw&t=13s" target="_blank">Vergelijkingen $\sin(x) = A$ en $\cos(x) = A$ oplossen</a></li>
+                <li><span style="color:#5cb85c;">[🖼️ Afbeeldingen]</span> <a href="https://www.google.nl/search?q=verdubbelingsformules+en+somformules&tbm=isch" target="_blank">Verdubbelingsformules en Somformules</a></li>
+                <li><span style="color:#5cb85c;">[🖼️ Afbeeldingen]</span> <a href="https://www.google.nl/search?q=tangensfunctie&tbm=isch" target="_blank">De Tangensfunctie $\tan(x) = \frac{\sin(x)}{\cos(x)}$</a></li>
             </ol>
         </section>
 
         <!-- Onderwerp 5 -->
         <section class="onderwerp-kaart" style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
             <h3 style="color: #333; margin-top: 0;">Onderwerp 5: Functies onderzoeken</h3>
+            <p style="background: #f0f7ff; padding: 10px; border-left: 4px solid #0073aa; font-size: 0.95em;">
+                <strong>Extreme waarden:</strong> $f'(x) = 0$ &nbsp;|&nbsp; <strong>Buigpunten:</strong> $f''(x) = 0$
+            </p>
             <ol style="padding-left: 20px;">
-                <li><a href="https://www.google.nl/search?q=functies+met+absolute+waarden+wisk+b&tbm=isch" target="_blank">Functies met absolute waarden – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=functies+onderzoeken+extreme+waarden+buigpunten&tbm=isch" target="_blank">Extreme waarden en Buigpunten – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=maxima+minima+buigpunten+wisk+b&tbm=isch" target="_blank">Maxima, Minima, Buigpunten – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=perforaties+en+asymptoten+wisk+b&tbm=isch" target="_blank">Perforaties en Asymptoten – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=scheve+asymptoten+wisb&tbm=isch" target="_blank">Scheve asymptoten – Afbeeldingen *</a></li>
+                <li><span style="color:#d9534f;">[📚 Theorie]</span> Functies met absolute waarden</li>
+                <li><span style="color:#d9534f;">[📚 Theorie]</span> Extreme waarden, Buigpunten & Asymptoten</li>
+                <li><span style="color:#5cb85c;">[🖼️ Afbeeldingen]</span> <a href="https://www.google.nl/search?q=perforaties+en+asymptoten+wisk+b&tbm=isch" target="_blank">Perforaties en Asymptoten</a></li>
             </ol>
         </section>
 
-        <!-- Onderwerp 6 (Inclusief Cabri 3D / Ruimtemeetkunde) -->
+        <!-- Onderwerp 6 -->
         <section class="onderwerp-kaart" style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-            <h3 style="color: #333; margin-top: 0;">Onderwerp 6: Meetkunde & Ruimtemeetkunde</h3>
+            <h3 style="color: #333; margin-top: 0;">Onderwerp 6: Meetkunde & Cabri 3D Ruimtemeetkunde</h3>
+            <p style="background: #f0f7ff; padding: 10px; border-left: 4px solid #0073aa; font-size: 0.95em;">
+                <strong>Inproduct:</strong> $\vec{a} \cdot \vec{b} = |\vec{a}| |\vec{b}| \cos(\alpha) = 0 \iff \vec{a} \perp \vec{b}$
+            </p>
             <ol style="padding-left: 20px;">
-                <li><a href="https://www.google.nl/search?q=bijzondere+lijnen+in+een+driehoek+wisb&tbm=isch" target="_blank">Bijzondere lijnen in een driehoek – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=lijnen+en+cirkels+wiskunde+b&tbm=isch" target="_blank">Lijnen en cirkels – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=afstanden+en+hoeken+wis+b&tbm=isch" target="_blank">Afstanden en Hoeken – Afbeeldingen *</a></li>
-                <li><a href="https://www.google.nl/search?q=zwaartepunten+wis+b&tbm=isch" target="_blank">Zwaartepunten – Afbeeldingen *</a></li>
+                <li><span style="color:#d9534f;">[📚 Theorie]</span> Bijzondere lijnen in een driehoek & Cirkels</li>
+                <li><span style="color:#d9534f;">[📚 Theorie]</span> Afstanden, Hoeken & Zwaartepunten</li>
             </ol>
 
             <div style="background-color: #eef7fc; border-left: 4px solid #0073aa; padding: 15px; margin-top: 15px; border-radius: 0 6px 6px 0;">
-                <h4 style="margin-top:0; color: #0073aa;">🌐 3D Ruimtemeetkunde (Cabri 3D & GeoGebra 3D)</h4>
-                <p style="font-size: 0.95em; margin-bottom: 8px;">Exploreer ruimtelijke figuren, bol/kegelsneden en afstandsberekeningen in 3D:</p>
+                <h4 style="margin-top:0; color: #0073aa;">🌐 Cabri 3D & Geometrie Modellen</h4>
+                <p style="font-size: 0.95em; margin-bottom: 8px;">Onderzoek ruimtelijke snijlijnen, bollen, kubussen en piramides in 3D:</p>
                 <ul style="padding-left: 20px; font-size: 0.95em;">
-                    <li><a href="https://www.geogebra.org/3d" target="_blank">GeoGebra 3D Grapher (Direct in de browser 3D-vectoren tekenen)</a></li>
-                    <li><a href="https://www.cabri.com/en/enterprise/cabri-3d/" target="_blank">Cabri 3D (Officiële Cabri 3D Software & Modellen)</a></li>
+                    <li><a href="https://www.cabri.com/en/enterprise/cabri-3d/" target="_blank">Cabri 3D Software (Officiële 3D Geometrie applicatie)</a></li>
+                    <li><a href="https://www.geogebra.org/3d" target="_blank">GeoGebra 3D Grapher (Interactieve 3D vlakken en vectoren)</a></li>
                 </ul>
             </div>
         </section>
 
-        <!-- Grafische Rekenmachines Links (Inclusief werkende Casio link) -->
+        <!-- Grafische Rekenmachines Links (Inclusief de WERKENDE Casio URL) -->
         <section class="onderwerp-kaart" style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
             <h3 style="color: #333; margin-top: 0;">➗ Grafische Rekenmachines (GR Tools)</h3>
-            <p>Ondersteuning voor software en de toegestane grafische rekenmachines op het examen:</p>
+            <p>Officieel goedgekeurde rekenmachines voor het Centraal Examen VWO:</p>
             <ul style="padding-left: 20px;">
                 <li><a href="https://education.ti.com/nl" target="_blank">Texas Instruments (TI-84 Plus CE / TI-Nspire)</a></li>
-                <li><a href="https://www.casio-education.nl" target="_blank">Casio Educatie (fx-CG50)</a></li>
+                <li><a href="https://www.casio-education.com/nl/" target="_blank">Casio Educatie Nederland (fx-CG50) ✔️</a></li>
                 <li><a href="https://www.numworks.com/nl/" target="_blank">NumWorks Grafische Rekenmachine</a></li>
             </ul>
         </section>
 
-        <!-- Examenondersteuning -->
+        <!-- Interactieve Examen Formule-Check -->
         <section class="onderwerp-kaart" style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-top: 4px solid #28a745;">
-            <h3 style="color: #28a745; margin-top: 0;">🎓 Examenondersteuning VWO Wiskunde B</h3>
-            <p>Bereid je optimaal voor op de toetsen en het Centraal Examen (CE):</p>
-            <ul style="padding-left: 20px;">
-                <li><a href="https://www.examenblad.nl" target="_blank">Examenblad.nl – Officiële examen-eisen en toegestane hulpmiddelen</a></li>
-                <li><a href="https://www.alleexamens.nl" target="_blank">AlleExamens.nl – Oefenen met oude examens VWO Wiskunde B</a></li>
+            <h3 style="color: #28a745; margin-top: 0;">🎓 Examen-ondersteuning: Formule-Check</h3>
+            <p>Test je kennis van de verplichte CE-formules voor dit examenjaar:</p>
+
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 6px; margin-top: 10px;">
+                <label for="formuleSelect" style="font-weight: bold;">Kies een examenonderwerp:</label><br>
+                <select id="formuleSelect" style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc;">
+                    <option value="1">Goniometrie: Wat is sin²(θ) + cos²(θ)?</option>
+                    <option value="2">Integreren: Formule voor omwentelen om de x-as?</option>
+                    <option value="3">Parametervoorstelling: Hoe bereken je de baansnelheid?</option>
+                </select>
+                <button onclick="checkFormule()" style="margin-top: 10px; background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold;">Controleer Formule</button>
+                <div id="formuleUitslag" style="margin-top: 12px; font-weight: bold; color: #0073aa;"></div>
+            </div>
+
+            <ul style="padding-left: 20px; margin-top: 15px;">
+                <li><a href="https://www.examenblad.nl" target="_blank">Examenblad.nl – Officiële examen-eisen VWO Wiskunde B</a></li>
+                <li><a href="https://www.alleexamens.nl" target="_blank">AlleExamens.nl – Oefenen met oude examenopgaven</a></li>
             </ul>
-        </section>
-
-        <!-- Interactive Tool: De Eenheidscirkel -->
-        <section class="gr-tool-box" style="background: #f9f9f9; border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin: 30px 0; text-align: center;">
-            <h3 style="margin-top:0; color: #333;">➗ Interactive Tool: De Eenheidscirkel</h3>
-            <p style="font-size: 0.95em; color: #555;">Versleep de hoek om direct de verandering in cosinus (x-as) en sinus (y-as) te zien:</p>
-
-            <iframe src="https://www.geogebra.org/material/iframe/id/vdf67dae/width/600/height/400/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" 
-                    width="100%" 
-                    height="400px" 
-                    style="border:0px; max-width: 600px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-            </iframe>
         </section>
 
     </main>
